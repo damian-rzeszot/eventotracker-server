@@ -1,8 +1,6 @@
 require "./spec_helper"
 
-describe . do
-  # TODO: Write tests
-
+describe "sample" do
   it "works" do
     false.should eq(true)
   end

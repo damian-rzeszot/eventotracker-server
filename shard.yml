@@ -1,0 +1,13 @@
+name: .
+version: 0.1.0
+
+authors:
+  - Damian Rzeszot <damian.rzeszot@gmail.com>
+
+targets:
+  .:
+    main: src/..cr
+
+crystal: 0.32.1
+
+license: MIT

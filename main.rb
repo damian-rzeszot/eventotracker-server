@@ -29,12 +29,13 @@ end
 
 get "/:app_name/events.json" do |app_name|
   @app_name = app_name
+
   content app_name, "events.yaml.erb"
 end
 
-get "/:app_name/:event_id/entrants.json" do |app_name, event_id|
+get "/:app_name/:event_id/config.json" do |app_name, event_id|
   @app_name = app_name
   @event_id = event_id
 
-  # content app_name, event_id, ""
+  content app_name, event_id, "config.yaml.erb"
 end

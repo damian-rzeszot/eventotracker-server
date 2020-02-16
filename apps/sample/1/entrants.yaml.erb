@@ -9,7 +9,6 @@ entrants:
       <%= Faker::University.name %>
       <%= Faker::Gender.binary_type %>
     extra: |-
-      <%= Faker::Name.name %>
-      <%= Faker::Name.name %>
+      <%= Faker::Number.between(from: 1, to: 5).times.map { Faker::Name.name }.join(", ") %>
 
   <% end %>

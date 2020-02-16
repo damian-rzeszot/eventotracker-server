@@ -1,0 +1,56 @@
+---
+header:
+  image: <%= uri("#{@app_name}/header.jpg") %>
+events:
+  - id: 1
+    title: Single event
+    subtitle: 1 January 2020
+    image: <%= uri("#{@app_name}/1/image.jpg") %>
+    config: <%= uri("#{@app_name}/1/config.json") %>
+
+  - id: 2
+    title: Closed single event
+    subtitle: 2 February 2020
+    image: <%= uri("#{@app_name}/2/image.jpg") %>
+    config: <%= uri("#{@app_name}/2/config.json") %>
+    open: false
+
+  - title: Event with subevents
+    subtitle: 3 March 2020
+    image: <%= uri("#{@app_name}/3/image.jpg") %>
+    header: <%= uri("#{@app_name}/3/header.jpg") %>
+    events:
+      - id: 4
+        title: First subevent
+        subtitle: 4 April 2020
+        image: <%= uri("#{@app_name}/4/image.jpg") %>
+        config: <%= uri("#{@app_name}/4/config.json") %>
+      - id: 5
+        title: Second subevent
+        subtitle: 5 May 2020
+        image: <%= uri("#{@app_name}/5/image.jpg") %>
+        config: <%= uri("#{@app_name}/5/config.json") %>
+
+  - title: Closed event with subevents
+    subtitle: 6 June 2020
+    image: <%= uri("#{@app_name}/1/image.jpg") %>
+    header: <%= uri("#{@app_name}/1/header.json") %>
+    open: false
+    events: []
+
+  - title: Opened event with subevents
+    subtitle: 7 July 2020
+    image: <%= uri("#{@app_name}/1/image.jpg") %>
+    header: <%= uri("#{@app_name}/1/header.json") %>
+    open: false
+    events:
+      - id: 8
+        title: First opened subevent
+        subtitle: 8 August 2020
+        image: <%= uri("#{@app_name}/5/image.jpg") %>
+        config: <%= uri("#{@app_name}/5/config.json") %>
+      - id: 9
+        title: Second closed subevent
+        subtitle: 9 September 2020
+        image: <%= uri("#{@app_name}/5/image.jpg") %>
+        config: <%= uri("#{@app_name}/5/config.json") %>

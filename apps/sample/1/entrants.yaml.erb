@@ -1,0 +1,15 @@
+---
+entrants:
+  <% 50.times do |index| %>
+
+  - id: <%= 1000 + index + 1 %>
+    number: <%= index + 1 %>
+    name: Team <%= Faker::Color.color_name.capitalize %>
+    info: |-
+      Swiss Epic
+      2019
+    extra: |-
+      <%= Faker::Name.name %>
+      <%= Faker::Name.name %>
+
+  <% end %>

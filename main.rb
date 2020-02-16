@@ -3,6 +3,7 @@ require "sinatra/json"
 require "sinatra/reloader" if development?
 require "erb"
 require "yaml"
+require 'faker'
 
 # Prettify output
 
@@ -25,7 +26,7 @@ def content(*args)
   yaml.to_json
 end
 
-# Events endpoint
+# Endpoints
 
 get "/:app_name/events.json" do |app_name|
   @app_name = app_name
@@ -38,4 +39,11 @@ get "/:app_name/:event_id/config.json" do |app_name, event_id|
   @event_id = event_id
 
   content app_name, event_id, "config.yaml.erb"
+end
+
+get "/:app_name/:event_id/entrants.json" do |app_name, event_id|
+  @app_name = app_name
+  @event_id = event_id
+
+  content(app_name, event_id, "entrants.yaml.erb")
 end

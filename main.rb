@@ -17,13 +17,23 @@ set :json_encode, PrettyJSONEncoder
 
 # Generate json repsonses
 
+def cache(key)
+  $cache ||= {}
+  $cache[key] ||= yield
+end
+
 def content(*args)
   path = File.join(settings.root, "apps", *args)
   content = File.read(path)
   template = ERB.new(content)
   yaml = YAML.load(template.result(binding))
-
   yaml.to_json
+end
+
+def cached_content(*args)
+  cache(args) do
+    content(args)
+  end
 end
 
 # Endpoints
@@ -31,19 +41,19 @@ end
 get "/:app_name/events.json" do |app_name|
   @app_name = app_name
 
-  content app_name, "events.yaml.erb"
+  cached_content(app_name, "events.yaml.erb")
 end
 
 get "/:app_name/:event_id/config.json" do |app_name, event_id|
   @app_name = app_name
   @event_id = event_id
 
-  content app_name, event_id, "config.yaml.erb"
+  cached_content(app_name, event_id, "config.yaml.erb")
 end
 
 get "/:app_name/:event_id/entrants.json" do |app_name, event_id|
   @app_name = app_name
   @event_id = event_id
 
-  content(app_name, event_id, "entrants.yaml.erb")
+  cached_content(app_name, event_id, "entrants.yaml.erb")
 end

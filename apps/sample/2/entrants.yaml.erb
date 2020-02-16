@@ -1,0 +1,14 @@
+---
+entrants:
+  <% 50.times do |index| %>
+
+  - id: <%= 1000 + index + 1 %>
+    number: <%= index + 1 %>
+    name: Team <%= Faker::Address.city %>
+    info: |-
+      <%= Faker::Address.street_name %>
+      <%= Faker::Gender.binary_type %>
+    extra: |-
+      <%= Faker::Number.between(from: 1, to: 5).times.map { Faker::Ancient.hero }.join(", ") %>
+
+  <% end %>

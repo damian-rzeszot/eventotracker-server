@@ -15,7 +15,7 @@ end
 
 set :json_encode, PrettyJSONEncoder
 
-# Generate json repsonses
+# Generate responses
 
 def cache(key)
   $cache ||= {}

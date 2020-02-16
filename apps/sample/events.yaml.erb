@@ -3,54 +3,60 @@ header:
   image: <%= uri("/sample/header.png") %>
 events:
   - id: 1
-    title: Single event
+    title: First single event
     subtitle: 1 January 2020
     image: <%= uri("/sample/thumbnail.png") %>
     config: <%= uri("#{@app_name}/1/config.json") %>
 
   - id: 2
-    title: Closed single event
+    title: Second single event
     subtitle: 2 February 2020
     image: <%= uri("/sample/thumbnail.png") %>
     config: <%= uri("#{@app_name}/2/config.json") %>
+
+  - id: 3
+    title: Closed single event
+    subtitle: 3 March 2020
+    image: <%= uri("/sample/thumbnail.png") %>
+    config: <%= uri("#{@app_name}/3/config.json") %>
     open: false
 
   - title: Event with subevents
-    subtitle: 3 March 2020
+    subtitle: 4 April 2020
     image: <%= uri("/sample/thumbnail.png") %>
     header: <%= uri("/sample/header.png") %>
     events:
-      - id: 4
-        title: First subevent
-        subtitle: 4 April 2020
-        image: <%= uri("/sample/thumbnail.png") %>
-        config: <%= uri("#{@app_name}/4/config.json") %>
       - id: 5
-        title: Second subevent
+        title: First subevent
         subtitle: 5 May 2020
         image: <%= uri("/sample/thumbnail.png") %>
-        config: <%= uri("#{@app_name}/5/config.json") %>
+        config: <%= uri("#{@app_name}/1/config.json") %>
+      - id: 6
+        title: Second subevent
+        subtitle: 6 June 2020
+        image: <%= uri("/sample/thumbnail.png") %>
+        config: <%= uri("#{@app_name}/1/config.json") %>
 
   - title: Closed event with subevents
-    subtitle: 6 June 2020
+    subtitle: 7 July 2020
     image: <%= uri("/sample/thumbnail.png") %>
     header: <%= uri("/sample/header.png") %>
     open: false
     events: []
 
   - title: Opened event with subevents
-    subtitle: 7 July 2020
+    subtitle: 8 August 2020
     image: <%= uri("/sample/thumbnail.png") %>
     header: <%= uri("/sample/header.png") %>
     events:
       - id: 8
         title: First opened subevent
-        subtitle: 8 August 2020
+        subtitle: 9 September 2020
         image: <%= uri("/sample/thumbnail.png") %>
-        config: <%= uri("#{@app_name}/8/config.json") %>
+        config: <%= uri("#{@app_name}/1/config.json") %>
       - id: 9
         title: Second closed subevent
-        subtitle: 9 September 2020
+        subtitle: 10 October 2020
         image: <%= uri("/sample/thumbnail.png") %>
         config: <%= uri("#{@app_name}/9/config.json") %>
         open: false

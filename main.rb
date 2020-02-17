@@ -42,10 +42,6 @@ end
 
 # Endpoints
 
-get "/" do
-  content("root.yaml.erb")
-end
-
 get "/:app_name/events" do |app_name|
   @app_name = app_name
 

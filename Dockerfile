@@ -14,4 +14,4 @@ RUN bundle install --system
 
 EXPOSE 4567
 
-CMD ["bundle", "exec", "ruby", "main.rb", "-p", "$PORT"]
+CMD bundle exec ruby main.rb -p $PORT

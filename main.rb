@@ -13,6 +13,7 @@ class PrettyJSONEncoder
   end
 end
 
+set :bind, '0.0.0.0'
 set :json_encode, PrettyJSONEncoder
 
 # Generate responses

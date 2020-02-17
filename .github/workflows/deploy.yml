@@ -5,11 +5,15 @@ on:
     branches:
       - master
 
+env:
+  APP_NAME: evento-tracker
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@v1
     - name: Login to Heroku Container registry
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
@@ -17,8 +21,8 @@ jobs:
     - name: Build and push
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:push -a evento-tracker web
+      run: heroku container:push -a $APP_NAME web
     - name: Release
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:release -a evento-tracker web
+      run: heroku container:release -a $APP_NAME web

@@ -1,4 +1,4 @@
-name: Pushcontainer to Heroku
+name: Push container to Heroku
 
 on:
   push:

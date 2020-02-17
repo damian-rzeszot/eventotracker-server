@@ -58,3 +58,11 @@ get "/:app_name/:event_id/entrants.json" do |app_name, event_id|
 
   cached_content(app_name, event_id, "entrants.yaml.erb")
 end
+
+get "/:app_name/:event_id/:entrant_id/details.json" do |app_name, event_id, entrant_id|
+  @app_name = app_name
+  @event_id = event_id
+  @entrant_id = entrant_id
+
+  cached_content(app_name, event_id, "details.yaml.erb")
+end

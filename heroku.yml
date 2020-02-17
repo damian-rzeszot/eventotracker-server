@@ -1,2 +1,6 @@
+build:
+  docker:
+    web: Dockerfile
+
 run:
   web: bundle exec ruby main.rb -p $PORT

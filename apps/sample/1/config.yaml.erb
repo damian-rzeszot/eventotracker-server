@@ -1,9 +1,9 @@
 ---
 entrants_list:
-  url: <%= url("/#{@app_name}/#{@event_id}/entrants.json") %>
+  url: <%= url("/#{@app_name}/#{@event_id}/entrants") %>
 
 entrants_details:
-  url: <%= url("/example") %>
+  url: <%= url("/#{@app_name}/#{@event_id}/entrants/\#{id}/details") %>
 
 tracking:
   update_freq: 180

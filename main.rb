@@ -19,6 +19,8 @@ set :json_encode, PrettyJSONEncoder
 # Generate responses
 
 def cache(key)
+  return yield if settings.development?
+
   $cache ||= {}
   $cache[key] ||= yield
 end
@@ -39,27 +41,31 @@ end
 
 # Endpoints
 
-get "/:app_name/events.json" do |app_name|
+get "/" do
+  content("root.yaml.erb")
+end
+
+get "/:app_name/events" do |app_name|
   @app_name = app_name
 
   cached_content(app_name, "events.yaml.erb")
 end
 
-get "/:app_name/:event_id/config.json" do |app_name, event_id|
+get "/:app_name/:event_id/config" do |app_name, event_id|
   @app_name = app_name
   @event_id = event_id
 
   cached_content(app_name, event_id, "config.yaml.erb")
 end
 
-get "/:app_name/:event_id/entrants.json" do |app_name, event_id|
+get "/:app_name/:event_id/entrants" do |app_name, event_id|
   @app_name = app_name
   @event_id = event_id
 
   cached_content(app_name, event_id, "entrants.yaml.erb")
 end
 
-get "/:app_name/:event_id/:entrant_id/details.json" do |app_name, event_id, entrant_id|
+get "/:app_name/:event_id/entrants/:entrant_id/details" do |app_name, event_id, entrant_id|
   @app_name = app_name
   @event_id = event_id
   @entrant_id = entrant_id

@@ -14,7 +14,7 @@ class PrettyJSONEncoder
 end
 
 set :bind, '0.0.0.0'
-set :json_encode, PrettyJSONEncoder
+set :json_encoder, PrettyJSONEncoder
 
 # Generate responses
 
@@ -29,8 +29,9 @@ def content(*args)
   path = File.join(settings.root, "apps", *args)
   content = File.read(path)
   template = ERB.new(content)
-  yaml = YAML.load(template.result(binding))
-  yaml.to_json
+  object = YAML.load(template.result(binding))
+
+  json object
 end
 
 def cached_content(*args)

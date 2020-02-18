@@ -1,6 +1,5 @@
 ---
-entries:
-
+items:
   - type: summary
     result: "04:12:24"
     items:
@@ -11,35 +10,30 @@ entries:
       - name: "RUN"
         value: "01:25:36"
 
-  - type: status
-    data:
-      - "STATUS : FINISHED"
-
-  - type: finish
-    data:
-      - "TIME : 04:12:24"
-
-  - type: header
-    data:
-      - "Point"
-      - "Race Time"
-      - "Time of Day"
-      - "Pace"
-
-  - type: standard
-    data:
-      - "START"
-      - "00:00:00"
-      - "6:22 AM"
-      - ""
-
-  - type: seaprator
-    data:
-      - "Transition 00:01:55"
-
-  - type: standard
-    data:
-      - "Bike 1k"
-      - "00:28:45"
-      - "6:50 AM"
-      - "60.00"
+  - type: splits
+    entries:
+    - style: status
+      data:
+        - "STATUS : FINISHED"
+    - style: finish
+      data:
+        - "TIME : 04:12:24"
+    - style: header
+      data:
+        - "Point"
+        - "Race Time"
+        - "Time of Day"
+        - "Pace"
+    - data:
+        - "START"
+        - "00:00:00"
+        - "6:22 AM"
+        - ""
+    - style: separator
+      data:
+        - "Transition 00:01:55"
+    - data:
+        - "Bike 1k"
+        - "00:28:45"
+        - "6:50 AM"
+        - "60.00"

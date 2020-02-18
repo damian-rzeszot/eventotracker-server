@@ -27,26 +27,39 @@ def content(*args)
   json object
 end
 
+def cache(key)
+  return yield if settings.development?
+
+  $cache ||= {}
+  $cache[key] ||= yield
+end
+
+def cached_content(*args)
+  cache(args) do
+    content(args)
+  end
+end
+
 # Endpoints
 
 get "/:app_name/events" do |app_name|
   @app_name = app_name
 
-  content(app_name, "events.yaml.erb")
+  cached_content(app_name, "events.yaml.erb")
 end
 
 get "/:app_name/:event_id/config" do |app_name, event_id|
   @app_name = app_name
   @event_id = event_id
 
-  content(app_name, event_id, "config.yaml.erb")
+  cached_content(app_name, event_id, "config.yaml.erb")
 end
 
 get "/:app_name/:event_id/entrants" do |app_name, event_id|
   @app_name = app_name
   @event_id = event_id
 
-  content(app_name, event_id, "entrants.yaml.erb")
+  cached_content(app_name, event_id, "entrants.yaml.erb")
 end
 
 get "/:app_name/:event_id/entrants/:entrant_id/details" do |app_name, event_id, entrant_id|
@@ -54,5 +67,5 @@ get "/:app_name/:event_id/entrants/:entrant_id/details" do |app_name, event_id, 
   @event_id = event_id
   @entrant_id = entrant_id
 
-  content(app_name, event_id, "details.yaml.erb")
+  cached_content(app_name, event_id, "details.yaml.erb")
 end

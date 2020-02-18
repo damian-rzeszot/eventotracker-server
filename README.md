@@ -1,6 +1,6 @@
-# .
+# Evento Tracker - Mock Server
 
-TODO: Write a description here
+http://evento-tracker.herokuapp.com
 
 ## Installation
 

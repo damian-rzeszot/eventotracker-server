@@ -9,8 +9,10 @@ tracking:
   update_freq: 180
   data: <%= url("/example") %>
   paths:
-    - name: red path
-      url: <%= url("/example") %>
+    - name: stage-1
+      url: <%= url("/maps/stage-1.geojson") %>
+    - name: stage-2
+      url: <%= url("/maps/stage-2.geojson") %>
 
 theme:
   accent:

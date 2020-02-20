@@ -11,7 +11,7 @@ env:
 jobs:
   deploy:
     name: Deploy to Heroku
-    if: "${{ secrets.HEROKU_API_KEY }}"
+    if: secrets.HEROKU_API_KEY
     runs-on: ubuntu-latest
     steps:
     - name: Checkout

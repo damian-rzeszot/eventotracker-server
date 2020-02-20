@@ -11,7 +11,7 @@ env:
 jobs:
   deploy:
     name: Deploy to Heroku
-    if: github.repository == "damian-rzeszot/eventotracker-server"
+    if: github.repository == 'damian-rzeszot/eventotracker-server'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout

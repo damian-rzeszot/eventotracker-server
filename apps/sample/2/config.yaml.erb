@@ -5,13 +5,6 @@ entrants_list:
 entrants_details:
   url: <%= url("/#{@app_name}/#{@event_id}/entrants/\#{id}/details") %>
 
-tracking:
-  update_freq: 180
-  data: <%= url("/example") %>
-  paths:
-    - name: stage-3
-      url: <%= url("/maps/stage-3.geojson") %>
-
 theme:
   accent:
     dark: "#007AFF"

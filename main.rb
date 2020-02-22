@@ -67,5 +67,5 @@ get "/:app_name/:event_id/entrants/:entrant_id/details" do |app_name, event_id, 
   @event_id = event_id
   @entrant_id = entrant_id
 
-  cached_content(app_name, event_id, "details.yaml.erb")
+  content(app_name, event_id, "details.yaml.erb")
 end

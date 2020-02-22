@@ -1,5 +1,13 @@
 ---
 entrants:
+  - id: <%= 1000 %>
+    number: 0
+    name: Team <%= Faker::Color.color_name.capitalize %>
+    info: |-
+      <%= Faker::University.name %>
+      <%= Faker::Gender.binary_type %>
+
+
   <% 50.times do |index| %>
 
   - id: <%= 1000 + index + 1 %>

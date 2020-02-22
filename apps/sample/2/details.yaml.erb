@@ -14,26 +14,59 @@ items:
     entries:
     - style: status
       data:
-        - "STATUS : FINISHED"
-    - style: finish
-      data:
-        - "TIME : 04:12:24"
+        - "STATUS : STARTED"
     - style: header
       data:
         - "Point"
         - "Race Time"
         - "Time of Day"
         - "Pace"
-    - data:
-        - "START"
-        - "00:00:00"
-        - "6:22 AM"
-        - ""
+
+    - data: [ "START",     "00:00:00", "6:22 AM",  ""]
+    - data: [ "Swim 1.9k", "00:24:51", "6:46 AM",  "" ]
+
     - style: separator
       data:
         - "Transition 00:01:55"
-    - data:
-        - "Bike 1k"
-        - "00:28:45"
-        - "6:50 AM"
-        - "60.00"
+
+    - data: [ "Bike 1k",    "00:28:45", "6:50 AM", "60.00" ]
+    - data: [ "Bike 10.5k", "00:43:51", "7:06 AM", "38.00" ]
+    - data: [ "Bike 27.9k", "01:10:45", "7:32 AM", "40.15" ]
+    - data: [ "Bike 33.9k", "01:20:20", "7:42 AM", "40.00" ]
+    - data: [ "Bike 39.6k", "01:28:25", "7:50 AM", "42.75" ]
+    - data: [ "Bike 45.9k", "01:38:26", "8:00 AM", "37.80" ]
+    - data: [ "Bike 56k",   "01:53:30", "8:15 AM", "40.40" ]
+    - data: [ "Bike 62k",   "02:02:58", "8:25 AM", "40.00" ]
+    - data: [ "Bike 79.7k", "02:29:19", "8:51 AM", "40.85" ]
+    - data: [ "Bike 90k",   "02:45:37", "9:07 AM", "38.63" ]
+
+    - style: separator
+      data:
+        - "Transition 00:01:10"
+
+    - data: [ "Run 1.2k",   "02:51:14", "9:13 AM",  "3:41" ]
+    - data: [ "Run 2.5k",   "02:55:27", "9:17 AM",  "3:14" ]
+    - data: [ "Run 3.6k",   "02:59:53", "9:22 AM",  "4:00" ]
+    - data: [ "Run 6k",     "03:08:05", "9:30 AM",  "3:24" ]
+    - data: [ "Run 7.5k",   "03:14:29", "9:36 AM",  "4:16" ]
+    - data: [ "Run 9k",     "03:21:03", "9:43 AM",  "4:22" ]
+    - data: [ "Run 11.4k",  "03:29:17", "9:51 AM",  "3:25" ]
+    - data: [ "Run 12.7k",  "03:33:45", "9:55 AM",  "3:25" ]
+    - data: [ "Run 13.9k",  "", "", "" ]
+      style: estimate
+    - data: [ "Run 16.2k",  "", "", "" ]
+      style: estimate
+    - data: [ "Run 17.8k",  "", "", "" ]
+      style: estimate
+    - data: [ "Run 19.3k",  "", "", "" ]
+      style: estimate
+    - data: [ "FINISH",     "", "", "" ]
+      style: estimate
+
+  # - type: web
+  #   title: "Web content"
+  #   url: <%= url("/#{@app_name}/#{@event_id}/entrants/#{@entrant_id}/web-content") %>
+  #
+  # - type: banner
+  #   image: <%= url("/#{@app_name}/#{@event_id}/entrants/#{@entrant_id}/web-content") %>
+  #   open: <%= url("/#{@app_name}/#{@event_id}/entrants/#{@entrant_id}/web-content") %>

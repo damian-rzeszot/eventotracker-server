@@ -7,7 +7,7 @@ entrants_details:
 
 tracking:
   update_freq: 180
-  data: <%= url("/example") %>
+  data: <%= url("/#{@app_name}/#{@event_id}/predictions") %>
   paths:
     - name: stage-1
       url: <%= url("/maps/stage-1.geojson") %>

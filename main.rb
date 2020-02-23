@@ -84,3 +84,12 @@ get "/:app_name/:event_id/entrants/:entrant_id/details" do |app_name, event_id, 
 
   content(app_name, event_id, "details.yaml.erb")
 end
+
+post "/:app_name/:event_id/predictions" do |app_name, event_id|
+  @app_name = app_name
+  @event_id = event_id
+
+  @tracks = request.json[:tracks]
+
+  content(app_name, event_id, "predictions.yaml.erb")
+end

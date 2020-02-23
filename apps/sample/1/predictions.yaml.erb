@@ -1,9 +1,5 @@
 <%
 
-def path(track)
-  id = (track + 1) % 2 + 1
-  "stage-#{id}"
-end
 
 def speed(track)
   ((track % 5 == 0 ? 0.0 : 20.0) + (track % 5)) / 20
@@ -20,5 +16,5 @@ predictions:
     - track: <%= track %>
       speed: <%= speed(track) %>
       location: <%= location(track)%>
-      path: <%= path(track) %>
+      path: test
   <% end %>

@@ -9,10 +9,8 @@ tracking:
   update_freq: 180
   data: <%= url("/#{@app_name}/#{@event_id}/predictions") %>
   paths:
-    - name: stage-1
-      url: <%= url("/maps/stage-1.geojson") %>
-    - name: stage-2
-      url: <%= url("/maps/stage-2.geojson") %>
+    - name: test
+      url: <%= url("/maps/test.geojson") %>
 
 more:
   items:

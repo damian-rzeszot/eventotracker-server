@@ -1,9 +1,24 @@
 require "sinatra"
 require "sinatra/json"
-require "sinatra/reloader" if development?
 require "erb"
 require "yaml"
 require 'faker'
+
+if development?
+  require "byebug"
+  require "sinatra/reloader"
+end
+
+# JSON Body
+
+class Sinatra::Request
+  def json
+    @json ||= Proc.new {
+      body.rewind
+      Sinatra::IndifferentHash[JSON.parse(body.read)]
+    }.call
+  end
+end
 
 # Prettify output
 

@@ -1,9 +1,24 @@
 require "sinatra"
 require "sinatra/json"
-require "sinatra/reloader" if development?
 require "erb"
 require "yaml"
 require 'faker'
+
+if development?
+  require "byebug"
+  require "sinatra/reloader"
+end
+
+# JSON Body
+
+class Sinatra::Request
+  def json
+    @json ||= Proc.new {
+      body.rewind
+      Sinatra::IndifferentHash[JSON.parse(body.read)]
+    }.call
+  end
+end
 
 # Prettify output
 
@@ -68,4 +83,13 @@ get "/:app_name/:event_id/entrants/:entrant_id/details" do |app_name, event_id, 
   @entrant_id = entrant_id
 
   content(app_name, event_id, "details.yaml.erb")
+end
+
+post "/:app_name/:event_id/predictions" do |app_name, event_id|
+  @app_name = app_name
+  @event_id = event_id
+
+  @tracks = request.json[:tracks]
+
+  content(app_name, event_id, "predictions.yaml.erb")
 end

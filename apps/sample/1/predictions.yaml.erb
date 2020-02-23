@@ -1,0 +1,20 @@
+<%
+
+
+def speed(track)
+  ((track % 5 == 0 ? 0.0 : 20.0) + (track % 5)) / 20
+end
+
+def location(track)
+  50 + (track % 20) * 5
+end
+
+%>
+---
+predictions:
+  <% @tracks.each do |track| %>
+    - track: <%= track %>
+      speed: <%= speed(track) %>
+      location: <%= location(track)%>
+      path: test
+  <% end %>

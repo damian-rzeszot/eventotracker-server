@@ -1,4 +1,8 @@
 ---
+
+home:
+  image: <%= uri("/sample/home.png?w=\#{width}&h=\#{height}&s=\#{scale}") %>
+
 entrants_list:
   url: <%= url("/#{@app_name}/#{@event_id}/entrants") %>
 

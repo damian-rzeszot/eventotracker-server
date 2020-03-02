@@ -1,6 +1,5 @@
 <%
 
-
 def speed(track)
   ((track % 5 == 0 ? 0.0 : 20.0) + (track % 5)) / 20
 end
@@ -9,12 +8,34 @@ def location(track)
   50 + (track % 20) * 5
 end
 
+
+def tracked?(track)
+  (track % 4) != 0
+end
+
+
+
 %>
 ---
 predictions:
   <% @tracks.each do |track| %>
     - track: <%= track %>
+      <% if tracked?(track) %>
       speed: <%= speed(track) %>
+      <% end %>
       location: <%= location(track)%>
       path: test
+  <% end %>
+
+cards:
+  <% @tracks.select { |track| tracked?(track) }.each do |track| %>
+    - track: <%= track %>
+      info: "FINISHED (id: <%= track %>)"
+      left:
+        title: "Average Speed"
+        value: "--.-"
+        unit: "km/h"
+      right:
+        title: "Finish Time"
+        value: "03:44:08"
   <% end %>

@@ -77,6 +77,20 @@ get "/:app_name/:event_id/entrants" do |app_name, event_id|
   cached_content(app_name, event_id, "entrants.yaml.erb")
 end
 
+get "/:app_name/:event_id/feed" do |app_name, event_id|
+  @app_name = app_name
+  @event_id = event_id
+
+  cached_content(app_name, event_id, "feed.yaml.erb")
+end
+
+get "/:app_name/:event_id/pages" do |app_name, event_id|
+  @app_name = app_name
+  @event_id = event_id
+
+  cached_content(app_name, event_id, "pages.yaml.erb")
+end
+
 get "/:app_name/:event_id/entrants/:entrant_id/details" do |app_name, event_id, entrant_id|
   @app_name = app_name
   @event_id = event_id

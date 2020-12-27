@@ -19,34 +19,34 @@ tracking:
 
 more:
   items:
-  - type: link
-    link:
-      title: Results 2019
-      url: https://www.sportsplits.com/races/DHIOceania2020
-  - type: link
-    link:
-      title: Schedule
-      url: https://www.christchurchmarathon.co.nz/race-info
-  - type: link
-    link:
-      title: Leaderboard
-      url: https://www.christchurchmarathon.co.nz/race-info
-  - type: schedule
-    schedule:
-      title: Event Schedule
-      source: http://eventotracker.com/api/samplejson/schedule.json
-  - type: carousel
-    carousel:
-      title: Carousel 1
-      source: https://raw.githubusercontent.com/eventonz/eventonz.github.io/main/carousel1.json
-  - type: feed
-    feed:
-      title: Feed
-      url: <%= uri("/sample/1/feed") %>
-  - type: pages
-    pages:
-      title: "List page"
-      url: <%= uri("/sample/1/pages") %>
+    - title: Results 2019
+      type: link
+      link:
+        url: https://www.sportsplits.com/races/DHIOceania2020
+    - title: Schedule
+      type: link
+      link:
+        url: https://www.christchurchmarathon.co.nz/race-info
+    - title: Leaderboard
+      type: link
+      link:
+        url: https://www.christchurchmarathon.co.nz/race-info
+    - title: Event Schedule
+      type: schedule
+      schedule:
+        url: http://eventotracker.com/api/samplejson/schedule.json
+    - title: Carousel 1
+      type: carousel
+      carousel:
+        url: https://raw.githubusercontent.com/eventonz/eventonz.github.io/main/carousel1.json
+    - title: Feed
+      type: feed
+      feed:
+        url: <%= uri("/sample/1/feed") %>
+    - title: "List page"
+      type: pages
+      pages:
+        url: <%= uri("/sample/1/pages") %>
 
 theme:
   accent:

@@ -1,16 +1,16 @@
 <%
 
 def speed(track)
-  ((track % 5 == 0 ? 0.0 : 20.0) + (track % 5)) / 20
+  ((track.to_i % 5 == 0 ? 0.0 : 20.0) + (track.to_i % 5)) / 20
 end
 
 def location(track)
-  50 + (track % 20) * 5
+  50 + (track.to_i % 20) * 5
 end
 
 
 def tracked?(track)
-  (track % 4) != 0
+  (track.to_i % 4) != 0
 end
 
 
@@ -19,7 +19,7 @@ end
 ---
 predictions:
   <% @tracks.each do |track| %>
-    - track: <%= track %>
+    - track: "<%= track %>"
       <% if tracked?(track) %>
       speed: <%= speed(track) %>
       <% end %>
@@ -29,7 +29,7 @@ predictions:
 
 cards:
   <% @tracks.select { |track| tracked?(track) }.each do |track| %>
-    - track: <%= track %>
+    - track: "<%= track %>"
       info: "FINISHED (id: <%= track %>)"
       left:
         title: "Average Speed"

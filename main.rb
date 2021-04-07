@@ -107,3 +107,10 @@ post "/:app_name/:event_id/predictions" do |app_name, event_id|
 
   content(app_name, event_id, "predictions.yaml.erb")
 end
+
+get "/:app_name/:event_id/schedule" do |app_name, event_id|
+  @app_name = app_name
+  @event_id = event_id
+
+  content(app_name, event_id, "schedule.yaml.erb")
+end

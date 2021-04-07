@@ -34,7 +34,7 @@ more:
     - title: Event Schedule
       type: schedule
       schedule:
-        url: http://eventotracker.com/api/samplejson/schedule.json
+        url: <%= url("/#{@app_name}/#{@event_id}/schedule") %>
     - title: Carousel 1
       type: carousel
       carousel:

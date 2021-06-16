@@ -114,3 +114,7 @@ get "/:app_name/:event_id/schedule" do |app_name, event_id|
 
   content(app_name, event_id, "schedule.yaml.erb")
 end
+
+get "/:app_name/:event_id/actions/:action_name" do |app_name, event_id, action_name|
+  cached_content(app_name, event_id, "actions", "#{action_name}.yaml.erb")
+end

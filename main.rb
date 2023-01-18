@@ -57,6 +57,10 @@ end
 
 # Endpoints
 
+get '/' do
+  'Hello World'
+end
+
 get "/:app_name/events" do |app_name|
   @app_name = app_name
 

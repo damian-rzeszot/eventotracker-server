@@ -1,7 +1,7 @@
 ---
 entrants:
   - id: "<%= 1000 %>"
-    number: 0
+    number: "0"
     contest: 1
     name: Team <%= Faker::Color.color_name.capitalize %>
     info: |-
@@ -12,7 +12,7 @@ entrants:
   <% 50.times do |index| %>
 
   - id: "<%= 1000 + index + 1 %>"
-    number: <%= index + 1 %>
+    number: "<%= index + 1 %>"
     contest: 1
     name: Team <%= Faker::Color.color_name.capitalize %>
     info: |-
